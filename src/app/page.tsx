@@ -1,7 +1,11 @@
+// src/app/page.tsx
+
 "use client";
 import React, { useState } from "react";
 import InsumoForm from "./_components/InsumoForm";
 import InsumoTable from "./_components/InsumoTable";
+
+import ReceitaForm from "./_components/ReceitaForm";
 
 export default function HomePage() {
   const [refreshInsumos, setRefreshInsumos] = useState<(() => void) | null>(
@@ -32,11 +36,7 @@ export default function HomePage() {
         <div className="md:col-span-1 space-y-8">
           <InsumoForm onInsumoCreated={handleInsumoCreated} />
 
-          <div className="bg-white p-6 rounded-xl shadow-xl border border-gray-100 h-64">
-            <h2 className="text-xl font-semibold text-gray-700">
-              2. Produção de Receita (Próximo)
-            </h2>
-          </div>
+          <ReceitaForm />
         </div>
 
         <div className="md:col-span-2">
